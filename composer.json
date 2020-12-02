@@ -1,0 +1,28 @@
+{
+	"name": "mepihindeveloper/skinny-php-skeleton",
+	"type": "project",
+	"description": "The skeleton for SkinnyPHP framework",
+	"license": "MIT",
+	"keywords": [
+		"framework",
+		"skinny",
+		"skeleton"
+	],
+	"authors": [
+		{
+			"name": "Maxim N Epikhin",
+			"email": "mepihindeveloper@gmail.com"
+		}
+	],
+	"require": {
+		"php": "^7.4|^8.0",
+		"mepihindeveloper/skinny-php": "^1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"skinny\\": "skinny"
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}

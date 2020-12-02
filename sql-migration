@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types = 1);
+
+use skinny\kernel\components\Console;
+use skinny\kernel\components\Migration;
+
+define('ROOT', (getenv('PWD') . '/'));
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$method = $argv[1];
+$params = $argv[2] ?? null;
+$migration = new Migration();
+
+if (!method_exists($migration, $method))
+{
+	exit (Console::writeError("Неопознанная команда '{$method}'"));
+}
+
+if (is_null($params))
+{
+	$migration->$method();
+} else
+{
+	$migration->$method($params);
+}
